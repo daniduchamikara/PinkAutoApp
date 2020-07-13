@@ -14,7 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer independent={true}>
-        <Stack.Navigator initialRouteName="splash">
+        <Stack.Navigator initialRouteName="Dashboard">
 
           <Stack.Screen name="splash" component={splash} options={{ headerShown: false }} />
           <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
