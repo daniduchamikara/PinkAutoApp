@@ -4,10 +4,15 @@ import {
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+
 } from "react-native";
 import { FlatGrid } from 'react-native-super-grid';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+
+import { ScrollView } from "react-native-gesture-handler";
 
 export default class Dashboard extends Component {
 
@@ -21,46 +26,62 @@ export default class Dashboard extends Component {
         return (
             <View style={styles.container}>
 
-                <Text style={[styles.title, { fontSize: 24 }]}>Good Morning!</Text>
-                <View style={{ padding: 5 }} />
-                <Text style={[styles.title, { fontSize: 14 }]}>Activity Request</Text>
-                <View style={{ padding: 10 }} />
-
-                <TouchableOpacity style={styles.detailContainer}>
-                    <Text style={{ fontSize: 14, fontWeight: 'bold' }}>Nano Ceramic Coating</Text>
-                    <View style={{ flexDirection: 'row', alignItems:'center' }}>
-                        <Text style={{ fontSize: 14 }}>Vehicle Reached Center</Text>
+                <View style={{ margin: 20 }}>
+                    <View style={{ flexDirection: 'row',height:40 }}>
+                        <Icon name='menu' size={25} color={'black'} />
                         <View style={{ flex: 1 }} />
-                        <Text style={{ fontSize: 12, fontWeight: 'bold' }}>View Details</Text>
-                        <Icon name='chevron-right' size={20} color={'red'} />
+                        <Icon name='ios-notifications' size={25} color={'black'} />
+                        <View style={{ flex: 0.03 }} />
+                        <Icon name='chatbubble-ellipses-outline' size={25} color={'black'} />
                     </View>
 
-                </TouchableOpacity>
+                    <Text style={[styles.title, { fontSize: 24 }]}>Good Morning!</Text>
+                    <View style={{ padding: 5 }} />
+                    <Text style={[styles.title, { fontSize: 14 }]}>Activity Request</Text>
+                    <View style={{ padding: 10 }} />
 
-                <View style={{ height: 220 }}>
-                    <FlatGrid
-                        itemDimension={200}
-                        data={items}
-                        style={styles.gridView}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal={true}
-                        renderItem={({ item }) => (
-                            <TouchableOpacity style={styles.itemContainer}>
-                                <Image source={item.img} resizeMode={'stretch'} style={{ width: 100, height: 80 }}/>
-                                <Text style={styles.itemName}>{item.name}</Text>
-                                <Text style={styles.itemNumber}>{item.nmber}</Text>
-                            </TouchableOpacity>
-                        )}
-                    />
+                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{alignItems:'center'}}>
+
+                        <TouchableOpacity style={styles.detailContainer}>
+                            <Text style={{ fontSize: 14, fontWeight: 'bold' }}>Nano Ceramic Coating</Text>
+                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <Text style={{ fontSize: 14 }}>Vehicle Reached Center</Text>
+                                <View style={{ flex: 1 }} />
+                                <Text style={{ fontSize: 12, fontWeight: 'bold' }}>View Details</Text>
+                                <IconM name='chevron-right' size={20} color={'red'} />
+                            </View>
+
+                        </TouchableOpacity>
+
+                        <View style={{ height: 220 }}>
+                            <FlatGrid
+                                itemDimension={200}
+                                data={items}
+                                style={styles.gridView}
+                                showsHorizontalScrollIndicator={false}
+                                horizontal={true}
+                                renderItem={({ item }) => (
+                                    <TouchableOpacity style={styles.itemContainer}>
+                                        <Image source={item.img} resizeMode={'stretch'} style={{ width: 100, height: 80 }} />
+                                        <Text style={styles.itemName}>{item.name}</Text>
+                                        <Text style={styles.itemNumber}>{item.nmber}</Text>
+                                    </TouchableOpacity>
+                                )}
+                            />
+                        </View>
+
+                        <Text style={styles.title}>Select Type of car wash</Text>
+
+                        <View style={{height:100}}/>
+
+                        <TouchableOpacity style={styles.nextBtn}>
+                            <Text style={{ color: 'white', fontSize: 15 }}>Next</Text>
+                        </TouchableOpacity>
+
+                    </ScrollView>
+
+
                 </View>
-
-                <Text style={styles.title}>Select Type of car wash</Text>
-
-
-                <TouchableOpacity style={styles.nextBtn}>
-                    <Text style={{ color: 'white', fontSize: 15 }}>Next</Text>
-
-                </TouchableOpacity>
             </View>
 
         );
@@ -72,24 +93,22 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 25
 
     },
 
     gridView: {
         marginTop: 10,
         flex: 1,
-
     },
 
     detailContainer: {
-        width: '100%',
+        width: '95%',
         height: 100,
         elevation: 5,
         borderRadius: 10,
         backgroundColor: 'white',
         justifyContent: 'center',
-        padding: 20
+        padding: 20,
     },
 
     itemContainer: {
