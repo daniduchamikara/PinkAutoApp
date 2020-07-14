@@ -4,6 +4,7 @@ import {
     Text,
     StyleSheet,
     Image,
+    Button,
     TouchableOpacity,
 
 } from "react-native";
@@ -50,7 +51,6 @@ export default class Dashboard extends Component {
                                 <Text style={{ fontSize: 12, fontWeight: 'bold' }}>View Details</Text>
                                 <IconM name='chevron-right' size={20} color={'red'} />
                             </View>
-
                         </TouchableOpacity>
 
                         <View style={{ height: 220 }}>
@@ -68,6 +68,20 @@ export default class Dashboard extends Component {
                                     </TouchableOpacity>
                                 )}
                             />
+                        </View>
+                        <View style={{flex: 2, flexDirection: 'row'}}>
+                            <View style={{height:50,padding:10}}>
+                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
+                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
+                            </View>
+                            <View style={{height:50,padding:10}}>
+                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
+                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
+                            </View>
+                            <View style={{height:50,padding:10}}>
+                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
+                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
+                            </View>
                         </View>
 
                         <Text style={styles.title}>Select Type of car wash</Text>
@@ -118,9 +132,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 10,
         padding: 10,
-        height: 180,
+        height: 150,
         width: 120,
         marginLeft: 9
+    },
+    buttonContainer: {
+        backgroundColor: 'white',
+        elevation: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 3,
+        height: 25,
+        width: 25,
+        marginLeft: 9,
+        padding:10
     },
     itemName: {
         fontSize: 14,
@@ -133,7 +158,7 @@ const styles = StyleSheet.create({
         color: 'gray',
     },
     nextBtn: {
-        backgroundColor: 'black',
+        backgroundColor: '#e73b5a',
         width: '100%',
         height: 50,
         borderRadius: 10,
