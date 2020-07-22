@@ -6,6 +6,7 @@ import {
     Image,
     Button,
     TouchableOpacity,
+    TouchableHighlight,
 
 } from "react-native";
 import { FlatGrid } from 'react-native-super-grid';
@@ -14,6 +15,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 
 import { ScrollView } from "react-native-gesture-handler";
+import BigButton from "./components/BigButton";
 
 export default class Dashboard extends Component {
 
@@ -28,7 +30,7 @@ export default class Dashboard extends Component {
             <View style={styles.container}>
 
                 <View style={{ margin: 20 }}>
-                    <View style={{ flexDirection: 'row',height:40 }}>
+                    <View style={{ flexDirection: 'row', height: 40 }}>
                         <Icon name='menu' size={25} color={'black'} />
                         <View style={{ flex: 1 }} />
                         <Icon name='ios-notifications' size={25} color={'black'} />
@@ -41,7 +43,7 @@ export default class Dashboard extends Component {
                     <Text style={[styles.title, { fontSize: 14 }]}>Activity Request</Text>
                     <View style={{ padding: 10 }} />
 
-                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{alignItems:'center'}}>
+                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ alignItems: 'center' }}>
 
                         <TouchableOpacity style={styles.detailContainer}>
                             <Text style={{ fontSize: 14, fontWeight: 'bold' }}>Nano Ceramic Coating</Text>
@@ -62,35 +64,99 @@ export default class Dashboard extends Component {
                                 horizontal={true}
                                 renderItem={({ item }) => (
                                     <TouchableOpacity style={styles.itemContainer}>
-                                        <Image source={item.img} resizeMode={'stretch'} style={{ width: 100, height: 80 }} />
+                                        <Image source={item.img} resizeMode={'stretch'}
+                                            style={{ width: 100, height: 80 }} />
                                         <Text style={styles.itemName}>{item.name}</Text>
                                         <Text style={styles.itemNumber}>{item.nmber}</Text>
                                     </TouchableOpacity>
                                 )}
                             />
                         </View>
-                        <View style={{flex: 2, flexDirection: 'row'}}>
-                            <View style={{height:50,padding:10}}>
-                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
-                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
-                            </View>
-                            <View style={{height:50,padding:10}}>
-                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
-                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
-                            </View>
-                            <View style={{height:50,padding:10}}>
-                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
-                                <TouchableOpacity style={styles.buttonContainer}></TouchableOpacity>
-                            </View>
-                        </View>
-
                         <Text style={styles.title}>Select Type of car wash</Text>
 
-                        <View style={{height:100}}/>
+                        <View style={{ flexDirection: 'row', width: '100%' }}>
+                            <TouchableOpacity style={{
+                                height: 100,
+                                flex: 1,
+                                backgroundColor: '#f6e6f1',
+                                margin: 5,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                underlayColor: '#D360CE'
+                            }}>
+                                <Image source={require('../assets/images/car-wash.png')} resizeMode={'stretch'} style={{ width: 50, height: 50 }} />
+                                <Text style={styles.buttonName}>Nano Coating </Text>
 
-                        <TouchableOpacity style={styles.nextBtn}>
-                            <Text style={{ color: 'white', fontSize: 15 }}>Next</Text>
-                        </TouchableOpacity>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                height: 100,
+                                flex: 1,
+                                backgroundColor: '#f6e6f1',
+                                margin: 5,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Image source={require('../assets/images/car-wash.png')} resizeMode={'stretch'} style={{ width: 50, height: 50 }} />
+                                <Text style={styles.buttonName}>Nano Coating </Text>
+
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                height: 100,
+                                flex: 1,
+                                backgroundColor: '#f6e6f1',
+                                margin: 5,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Image source={require('../assets/images/car-wash.png')} resizeMode={'stretch'} style={{ width: 50, height: 50 }} />
+                                <Text style={styles.buttonName}>Nano Coating </Text>
+
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ flexDirection: 'row', width: '100%' }}>
+                            <TouchableOpacity style={{
+                                height: 100,
+                                flex: 1,
+                                backgroundColor: '#f6e6f1',
+                                margin: 5,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Image source={require('../assets/images/car-wash.png')} resizeMode={'stretch'} style={{ width: 50, height: 50 }} />
+                                <Text style={styles.buttonName}>Nano Coating </Text>
+
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                height: 100,
+                                flex: 1,
+                                backgroundColor: '#f6e6f1',
+                                margin: 5,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Image source={require('../assets/images/car-wash.png')} resizeMode={'stretch'} style={{ width: 50, height: 50 }} />
+                                <Text style={styles.buttonName}>Nano Coating </Text>
+
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                height: 100,
+                                flex: 1,
+                                backgroundColor: '#f6e6f1',
+                                margin: 5,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Image source={require('../assets/images/car-wash.png')} resizeMode={'stretch'} style={{ width: 50, height: 50 }} />
+                                <Text style={styles.buttonName}>Nano Coating </Text>
+
+                            </TouchableOpacity>
+
+                        </View>
+
+
+                        <BigButton
+                            title='Next'
+                        />
 
                     </ScrollView>
 
@@ -145,12 +211,18 @@ const styles = StyleSheet.create({
         height: 25,
         width: 25,
         marginLeft: 9,
-        padding:10
+        padding: 10
     },
     itemName: {
         fontSize: 14,
         color: 'black',
         fontWeight: 'bold',
+    },
+    buttonName: {
+        fontSize: 14,
+        color: 'black',
+        fontWeight: 'bold',
+        padding: 5
     },
     itemNumber: {
         fontWeight: '600',
@@ -158,7 +230,7 @@ const styles = StyleSheet.create({
         color: 'gray',
     },
     nextBtn: {
-        backgroundColor: '#e73b5a',
+        backgroundColor: '#000000',
         width: '100%',
         height: 50,
         borderRadius: 10,

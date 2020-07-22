@@ -4,7 +4,7 @@ import {
     Text,
     StyleSheet,
     Button,
-    Alert
+    Alert, Image
 } from "react-native";
 import { StackActions } from '@react-navigation/native';
 
@@ -18,7 +18,7 @@ export default class Spash extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Splash</Text>
+                <Image source={require('../assets/images/splash.jpg')} resizeMode={'stretch'} style={{width:'100%', height: '100%'}}/>
             </View>
         );
     }
